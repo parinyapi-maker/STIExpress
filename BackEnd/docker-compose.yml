@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+
+  db:
+    image: mysql:8.0
+    container_name: STIExpress
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: sti
+      MYSQL_DATABASE: STIExpress
+      
+    ports:
+      - "8200:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - nyepry.161322
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpSTIExpress
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: sti
+      UPLOAD_LIMIT: 64M
+    ports:
+      - "8163:80"
+    networks:
+      - nyepry.161322
+    restart: always
+  
+networks:
+  nyepry.161322:
+    driver: bridge
+
+volumes:
+  mysql_data:
+    driver: local
