@@ -1,0 +1,76 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+}
+.main-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 15px 0;
+}
+.hidden {
+    display: none !important;
+}
+.btn-primary, .btn-logout, .btn-success, .btn-action {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.btn-primary { background-color: #007bff; color: white; }
+.btn-logout { background-color: #dc3545; color: white; }
+.btn-success { background-color: #28a745; color: white; margin-top: 10px; width: 100%; }
+.btn-action { background-color: #e2e6ea; color: #333; }
+.btn-action:hover { background-color: #dae0e5; }
+
+.parcel-form {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+.parcel-form input, .parcel-form select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.parcel-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.parcel-table th, .parcel-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+.parcel-table th {
+    background-color: #f8f9fa;
+}
+.status-pending { color: orange; font-weight: bold; }
+.status-delivered { color: green; font-weight: bold; }

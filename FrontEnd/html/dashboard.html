@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้าหลัก - STIExpress</title>
+    
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="header">
+            <h2>หน้าจัดการพัสดุ</h2>
+            <div class="user-info">
+                <span id="welcomeText">ยินดีต้อนรับ, ...</span>
+                <button class="btn-logout" id="logoutBtn">ออกจากระบบ</button>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="action-section">
+            <button class="btn-primary" id="toggleFormBtn">+ สร้างรายการพัสดุใหม่</button>
+            
+            <form id="createParcelForm" class="parcel-form hidden">
+                <input type="text" id="trackingNum" placeholder="เลข Tracking" required>
+                <input type="text" id="parcelDetail" placeholder="รายละเอียด" required>
+                <input type="text" id="receiverName" placeholder="ชื่อผู้รับ" required>
+                
+                <select id="receiverDept" required>
+                    <option value="">-- เลือกปลายทาง --</option>
+                </select>
+                
+                <button type="submit" class="btn-success">บันทึก</button>
+            </form>
+        </div>
+
+        <hr>
+
+        <h3>รายการพัสดุทั้งหมด</h3>
+        <table class="parcel-table">
+            <thead>
+                <tr>
+                    <th>Tracking</th>
+                    <th>รายละเอียด</th>
+                    <th>ผู้รับ</th>
+                    <th>สถานะล่าสุด</th>
+                    <th>วันที่สร้าง</th>
+                    <th>จัดส่ง</th>
+                </tr>
+            </thead>
+            <tbody id="parcelTableBody">
+                <tr><td colspan="6" style="text-align: center;">กำลังโหลดข้อมูล...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

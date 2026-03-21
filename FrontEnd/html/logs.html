@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ประวัติพัสดุ - STIExpress</title>
+    <link rel="stylesheet" href="../css/logs.css">
+</head>
+<body>
+
+    <div class="logs-container">
+        <h2>ประวัติการติดตามพัสดุ</h2>
+        
+        <div class="info-box">
+            <p>เลข Tracking: <strong id="showTrack">กำลังโหลด...</strong></p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>วัน-เวลา</th>
+                    <th>สถานะ</th>
+                    <th>หมายเหตุ</th>
+                </tr>
+            </thead>
+            <tbody id="logsTableBody">
+                <tr><td colspan="3" style="text-align: center;">กำลังโหลดข้อมูล...</td></tr>
+            </tbody>
+        </table>
+
+        <br>
+        <button class="btn-back" onclick="window.location.href='dashboard.html'">ย้อนกลับ</button>
+    </div>
+
+    <script src="../js/logs.js"></script>
+</body>
+</html>

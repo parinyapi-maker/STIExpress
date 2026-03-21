@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>อัปเดตสถานะ - STIExpress</title>
+    <link rel="stylesheet" href="../css/update.css">
+</head>
+<body>
+
+    <div class="update-container">
+        <h2>อัปเดตสถานะพัสดุ</h2>
+        
+        <div class="info-box">
+            <p>เลข Tracking: <strong id="showTrack">กำลังโหลด...</strong></p>
+            <p>สถานะปัจจุบัน: <strong id="showStatus">กำลังโหลด...</strong></p>
+        </div>
+
+        <p>เลือกสถานะใหม่ที่ต้องการ:</p>
+        <div class="btn-group">
+            <button class="btn btn-pending" onclick="updateStatus('Pending')">รอรับเข้าระบบ (Pending)</button>
+            <button class="btn btn-transit" onclick="updateStatus('In Transit')">กำลังจัดส่ง (In Transit)</button>
+            <button class="btn btn-delivered" onclick="updateStatus('Delivered')">ส่งมอบสำเร็จ (Delivered)</button>
+        </div>
+
+        <button class="btn-back" onclick="window.location.href='dashboard.html'">ย้อนกลับ</button>
+    </div>
+
+    <script src="../js/update.js"></script>
+</body>
+</html>
