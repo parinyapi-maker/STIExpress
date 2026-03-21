@@ -16,10 +16,9 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         const data = await response.json();
 
         if (response.status === 200) {
-            messageDiv.style.color = "green";
-            messageDiv.innerText = "เข้าสู่ระบบสำเร็จ! กำลังพาไปหน้าหลัก...";
-            localStorage.setItem('userData', JSON.stringify(data.userData));
-        } else {
+    window.location.href = 'dashboard.html'; 
+
+} else {
             messageDiv.style.color = "red";
             messageDiv.innerText = " " + data.message;
         }

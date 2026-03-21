@@ -4,7 +4,12 @@ if (!userDataString) {
     window.location.href = '../html/login.html';
 }
 const userData = JSON.parse(userDataString);
-document.getElementById('welcomeText').innerText = `สวัสดี, ${userData.full_name}`;
+
+const welcomeTextEl = document.getElementById('welcomeText');
+if (welcomeTextEl) {
+    welcomeTextEl.innerText = `สวัสดี, ${userData.full_name}`;
+}
+
 const urlParams = new URLSearchParams(window.location.search);
 const parcelId = urlParams.get('id');
 const trackingNum = urlParams.get('track');
@@ -12,17 +17,22 @@ const currentStatus = urlParams.get('status');
 
 document.getElementById('showTrack').innerText = trackingNum;
 document.getElementById('showStatus').innerText = currentStatus;
+
 function highlightCurrentStatus() {
-    const statusEngNames = ['Pending', 'In Transit', 'Delivered'];
+    const statusEngNames = ['Pending', 'Delivering', 'Received'];
     const statusBtnIds = ['pending', 'transit', 'delivered'];
     const index = statusEngNames.indexOf(currentStatus);
     
     if (index !== -1) {
-        document.getElementById(`status-${statusBtnIds[index]}`).classList.add('active');
+        const btnEl = document.getElementById(`status-${statusBtnIds[index]}`);
+        if(btnEl) {
+            btnEl.classList.add('active');
+        }
     }
 }
 
 highlightCurrentStatus();
+
 async function updateStatus(newStatus) {
     if (newStatus === currentStatus) {
         alert('พัสดุอยู่ในสถานะนี้อยู่แล้วครับ!');

@@ -1,8 +1,4 @@
-// ไฟล์: login.js
-
 module.exports = function(app, pool) {
-    
-    // [POST] API สำหรับเช็ค Login
     app.post('/login', async (req, res) => {
         try {
             const { username, password } = req.body;

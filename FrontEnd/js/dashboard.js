@@ -54,7 +54,12 @@ async function loadParcels() {
                 <td>${p.receiver_name}</td>
                 <td class="${statusClass}">${p.current_status}</td>
                 <td>${dateStr}</td>
-                <td><button class="btn-action">ดู</button></td> `;
+
+                <td>
+                <button class="btn-action" onclick="window.location.href='update.html?id=${p.parcel_id}&track=${p.tracking_number}&status=${p.current_status}'">อัปเดต</button>
+                <button class="btn-action" style="background-color: #17a2b8; color: white; margin-left: 5px;" onclick="window.location.href='logs.html?id=${p.parcel_id}&track=${p.tracking_number}'">ประวัติ</button>
+                </td>`;
+                
             tbody.appendChild(tr);
         });
     } catch (error) {
